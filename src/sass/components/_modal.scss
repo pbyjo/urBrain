@@ -1,0 +1,49 @@
+.ModalContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 25%;
+    left: 32%;
+    right: 32%;
+    bottom: 18%;
+    color: $font-main-color;
+    border-radius: 10px;
+    background: #18191A;
+    @extend %boxShadow;
+
+        transition: 1s;
+        animation: bu 1s;
+
+    & > p {
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    &__close {
+        position: fixed;
+        border-radius: 0 10px 0 0;
+        width: 40px;
+        height: 40px;
+        top: 25%;
+        right: 32%;
+        bottom: initial;
+        left: initial;
+        border: none;
+        font-size: 1rem;
+        background-color: rgba($color: black, $alpha: .5);
+        animation: none;
+    }
+    &__close:hover {
+        transform: none;
+    }
+}
+
+@keyframes bu {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

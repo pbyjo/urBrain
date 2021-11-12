@@ -1,0 +1,174 @@
+.container {
+    @extend %display-flex;
+    flex-direction: column;
+    max-width: 1600px;
+    height: auto;
+    border-radius: 10px;
+    color: $font-main-color;
+    padding: 2rem;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.container2 {
+    @extend .container;
+    margin-top: 30px;
+    padding: 0;
+}
+
+.task-container {
+    @extend %display-flex;
+    width: 100%;
+    max-width: 1920px;
+    margin-top: 50px;
+    flex-wrap: wrap
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    padding: 0;
+    margin: 5px 0 10px 0;
+}
+
+.Icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22px;
+    width: fit-content;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.Icon-delete {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    transition: .3s;
+}
+
+.Icon-delete:hover {
+    color: $uncompleted-color;
+}
+
+.completed {
+    color: $completed-color;
+    text-decoration: line-through;
+}
+
+.uncompleted {
+    color: $miAmarillo;
+}
+
+.buttonMain {
+    font-size: 32px;
+    font-weight: bold;
+    width: 80px;
+    height: 80px;
+    padding: 0px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: .1s;
+    
+    position: fixed;
+    bottom: 3%;
+    right: 2%;
+    
+    color: $font-main-color;
+    border: 4px $color-sec solid;
+    background: rgba($color: #212529, $alpha: .8);
+
+    animation: 1.7s scale ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.buttonMain:hover {
+    animation-play-state: paused;
+}
+
+.buttonMain:active {
+    transform: scale(.9);
+}
+
+.form {
+    width: 80%;
+    min-width: 60%;
+    height: auto;
+    flex-direction: column;
+    @extend %display-flex;
+    
+    & > textarea {
+        width: 100%;
+        max-width: 360px;
+        height: 60px;
+        font-size: 1rem;
+        font-style: initial;
+        color: $font-main-color;
+        background: rgba($myBlackSec, $alpha: .5);
+    }
+
+    &__buttons {
+        @extend %display-flex;
+
+        & > button {
+            width: 90px;
+            height: auto;
+            padding: 10px;
+            border-radius: 3px;
+            border: none;
+            font-weight: bold;
+            margin: 0 10px 0 0;
+            cursor: pointer;
+            color: $font-main-color;
+            background-color: $uncompleted-color;
+        }
+        & > button:last-child {
+            margin: 0;
+        }
+        & > button:nth-of-type(even) {
+            background-color: $completed-color;
+        }
+    }
+}
+
+.color-empty {
+    color: rgba($color: $font-main-color, $alpha: .4);
+}
+
+.color-length {
+    color: rgba($color: $color-sec, $alpha: .8);
+}
+
+.images {
+    width: 100%;
+    max-width: 500px;
+    object-fit: cover;
+    opacity: .8;
+}
+
+.skeletons_container {
+    @extend %display-flex;
+    flex-direction: column;
+
+    & > p {
+        color: $uncompleted-color;
+    }
+}
